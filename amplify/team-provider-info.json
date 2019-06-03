@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "reactnativestarter-dev-20190528155109-authRole",
+            "UnauthRoleArn": "arn:aws:iam::406490385186:role/reactnativestarter-dev-20190528155109-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::406490385186:role/reactnativestarter-dev-20190528155109-authRole",
+            "Region": "ap-southeast-1",
+            "DeploymentBucketName": "reactnativestarter-dev-20190528155109-deployment",
+            "UnauthRoleName": "reactnativestarter-dev-20190528155109-unauthRole",
+            "StackName": "reactnativestarter-dev-20190528155109",
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:406490385186:stack/reactnativestarter-dev-20190528155109/5b340000-811d-11e9-a50a-0238706b9a5e"
+        },
+        "categories": {
+            "auth": {
+                "reactnativestarter6258e403": {}
+            }
+        }
+    }
+}

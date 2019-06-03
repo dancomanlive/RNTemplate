@@ -1,0 +1,8 @@
+{
+	"auth": {
+		"reactnativestarter6258e403": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
