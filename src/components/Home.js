@@ -4,13 +4,14 @@ import {
 } from 'react-native'
 import { useNavigation } from 'react-navigation-hooks'
 
-const Home = () => {
+const Home = (props) => {
+  console.log("propsHome", props)
   const { navigate } = useNavigation()
 
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigate('Counter')}>
-        <Text style={styles.text}>Go to counter</Text>
+        <Text>Go to counter</Text>
       </TouchableOpacity>
     </View>
   )
@@ -24,10 +25,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  text: {
-    fontSize: 20,
-  },
+  }
 })
 
 export default Home
