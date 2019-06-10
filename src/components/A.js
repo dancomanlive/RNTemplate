@@ -2,11 +2,11 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { useNavigation } from 'react-navigation-hooks'
 
-const A = (props) => {
+const A = () => {
   const { navigate } = useNavigation()
 
   return (
-    <View style={{ flex: 1, backgroundColor: 'green' }}>
+    <View style={styles.container}>
       <Text
         onPress={() => navigate('B')}
         style={styles.text}

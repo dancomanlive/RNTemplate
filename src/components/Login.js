@@ -1,49 +1,46 @@
 /* eslint-disable no-unused-expressions */
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, View, ActivityIndicator } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { Auth } from 'aws-amplify'
 import { Authenticator, Loading } from 'aws-amplify-react-native'
 import { useNavigation } from 'react-navigation-hooks'
 
-const Login = (props) => {
-  const { navigate } = useNavigation()
+const Login = () => {
+  console.log("Login")
+  const { navigate, replace } = useNavigation()
   const [loggedIn, setLoggedIn] = useState(true)
 
   useEffect(() => {
     Auth.currentAuthenticatedUser({
       bypassCache: false
-    }).then((user) => {
-      console.log('user', user)
-      navigate('MainStack')
     })
+      .then((user) => {
+        console.log('user', user)
+        // navigate('MainStack')
+        replace('A')
+      })
       .catch((err) => {
         console.log(err)
         setLoggedIn(false)
-        // setTimeout(() => setLoggedIn(false), 500)
       })
   })
-
-  // console.log('loggedIn', loggedIn)
-  // if (loggedIn) {
-  //   return (
-  //     <View style={{ flex: 1, justifyContent: 'center' }}>
-  //       <ActivityIndicator size="large" color="#0000ff" />
-  //     </View>
-  //   )
-  // }
 
   return (
     <Authenticator
       onStateChange={(authState) => {
         console.log('authState', authState)
         if (authState === 'signedIn') {
-          navigate('MainStack')
+          // navigate('MainStack')
+          replace('A')
         }
       }}
       hideDefault={loggedIn}
+      signUpConfig={{ hiddenDefaults: ['phone_number'] }}
     />
   )
 }
+
+Login.navigationOptions = ({ navigation }) => ({ header: null })
 
 const styles = StyleSheet.create({
   container: {

@@ -1,13 +1,9 @@
-import React from 'react'
 import { createAppContainer, createStackNavigator, createBottomTabNavigator, createSwitchNavigator } from 'react-navigation'
-import { Auth } from 'aws-amplify'
 import Home from './components/Home'
 import Counter from './components/Counter'
 import Login from './components/Login'
 import A from './components/A'
 import B from './components/B'
-
-console.log("NAV", this.props)
 
 const FirstStack = createStackNavigator({
   Home,
@@ -16,10 +12,11 @@ const FirstStack = createStackNavigator({
 { initialRouteName: 'Home' })
 
 const SecondStack = createStackNavigator({
+  Login,
   A,
   B
 },
-{ initialRouteName: 'A' })
+{ initialRouteName: 'Login' })
 
 
 const MainStack = createBottomTabNavigator({
@@ -27,11 +24,11 @@ const MainStack = createBottomTabNavigator({
   Second: SecondStack
 })
 
-const rootStack = createSwitchNavigator({
-  Login,
-  MainStack
-},
-{ initialRouteName: 'Login' })
+// const rootStack = createSwitchNavigator({
+//   Login,
+//   MainStack
+// },
+// { initialRouteName: 'Login' })
 
-const AppNavigator = createAppContainer(rootStack)
+const AppNavigator = createAppContainer(MainStack)
 export default AppNavigator

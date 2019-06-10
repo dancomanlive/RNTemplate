@@ -4,11 +4,11 @@ import { Auth } from 'aws-amplify'
 import { useNavigation } from 'react-navigation-hooks'
 
 const B = (props) => {
-  const { navigate } = useNavigation()
+  const { navigate, replace } = useNavigation()
 
   const signOut = () => {
     Auth.signOut()
-      .then(() => navigate('Login'))
+      .then(() => replace('Login'))
       .catch(err => console.log(err))
   }
 
