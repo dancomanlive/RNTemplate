@@ -8,7 +8,7 @@ const Home = () => {
   const { navigate } = useNavigation()
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="app-root" accessibilityLabel="app-root">
       <TouchableOpacity onPress={() => navigate('Counter')}>
         <Text style={styles.text}>Go to counter</Text>
       </TouchableOpacity>

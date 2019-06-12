@@ -5,21 +5,30 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "lint": "eslint.js"
+    "lint": "eslint.js",
+    "appium": "appium",
+    "appium:doctor": "appium-doctor"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.4.1",
+    "@wdio/cli": "^5.10.4",
+    "appium": "^1.13.0",
     "easy-peasy": "^2.3.0",
     "react": "16.8.3",
     "react-native": "0.59.8",
     "react-native-gesture-handler": "^1.2.1",
     "react-navigation": "^3.11.0",
     "react-navigation-hooks": "^1.0.0-alpha.2",
-    "redux-persist": "^5.10.0"
+    "redux-persist": "^5.10.0",
+    "wdio-appium-service": "^0.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/runtime": "^7.4.5",
+    "@wdio/appium-service": "^5.9.3",
+    "@wdio/dot-reporter": "^5.9.3",
+    "@wdio/jasmine-framework": "^5.9.4",
+    "@wdio/local-runner": "^5.10.4",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.54.1",
